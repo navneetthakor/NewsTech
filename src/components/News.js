@@ -6,21 +6,20 @@ export default class News extends Component {
     article: [],
     loading: true,
     page: 1,
-    contry:'in'
   };
 
   async componentDidMount() {
     let url =
-      `https://newsapi.org/v2/top-headlines?country=${this.state.contry}&category=technology&apiKey=05911cada9804e94856bf33224a0d09a`;
+      `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&pageSize=21`;
     let data = await fetch(url);
     let parseData = await data.json();
-    this.setState({ article: parseData.articles, loading: false });
+    this.setState({ article: parseData.articles, loading: false, totalResults: parseData.totalResults });
   }
 
   handleprev = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=05911cada9804e94856bf33224a0d09a&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
       this.state.page - 1
-    }`;
+    }&pageSize=21`;
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({
@@ -31,9 +30,13 @@ export default class News extends Component {
   };
 
   handlenext = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=05911cada9804e94856bf33224a0d09a&page=${
+    if(this.state.page + 1 > this.state.totalResults/21){
+
+    }
+    else{
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
       this.state.page + 1
-    }`;
+    }&pageSize=21`;
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({
@@ -41,6 +44,7 @@ export default class News extends Component {
       loading: false,
       page: this.state.page + 1
     });
+  }
   };
 
   render() {
@@ -65,6 +69,7 @@ export default class News extends Component {
 
           <div className="container d-flex justify-content-evenly">
             <button
+            disabled={this.state.page <=1}
               type="button"
               class="btn btn-secondary"
               onClick={this.handleprev}
