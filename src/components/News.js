@@ -2,19 +2,28 @@ import React, { Component } from "react";
 import NewsIteam from "./NewsIteam";
 import Lf from "./Lf";
 
+
+
 export default class News extends Component {
+static defaultProps = {
+ country :'in',
+ size : 6
+}
+
   state = {
     article: [],
     loading: true,
     page: 1,
   };
 
+  
+
   async componentDidMount() {
     this.setState({
       loading:true
     })
     let url =
-      `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&pageSize=21`;
+      `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&pageSize=${this.props.size}`;
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({ article: parseData.articles, loading: false, totalResults: parseData.totalResults });
@@ -24,9 +33,9 @@ export default class News extends Component {
     this.setState({
       loading:true
     })
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
       this.state.page - 1
-    }&pageSize=21`;
+    }&pageSize=${this.props.size}`;
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({
@@ -45,9 +54,9 @@ export default class News extends Component {
       this.setState({
         loading:true
       })
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
       this.state.page + 1
-    }&pageSize=21`;
+    }&pageSize=${this.props.size}`;
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({
@@ -79,7 +88,7 @@ export default class News extends Component {
             })}
           </div>}
 
-          <div className="container d-flex justify-content-evenly">
+          <div className="container d-flex justify-content-evenly my-3">
             <button
             disabled={this.state.page <=1}
               type="button"
