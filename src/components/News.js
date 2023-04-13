@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewsIteam from "./NewsIteam";
+import Lf from "./Lf";
 
 export default class News extends Component {
   state = {
@@ -9,6 +10,9 @@ export default class News extends Component {
   };
 
   async componentDidMount() {
+    this.setState({
+      loading:true
+    })
     let url =
       `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&pageSize=21`;
     let data = await fetch(url);
@@ -17,6 +21,9 @@ export default class News extends Component {
   }
 
   handleprev = async () => {
+    this.setState({
+      loading:true
+    })
     let url = `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
       this.state.page - 1
     }&pageSize=21`;
@@ -30,10 +37,14 @@ export default class News extends Component {
   };
 
   handlenext = async () => {
+    
     if(this.state.page + 1 > this.state.totalResults/21){
 
     }
     else{
+      this.setState({
+        loading:true
+      })
     let url = `https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05911cada9804e94856bf33224a0d09a&page=${
       this.state.page + 1
     }&pageSize=21`;
@@ -52,7 +63,8 @@ export default class News extends Component {
       <>
         <div className="container my-3 text-center">
           <h2>Leates Tech news for Geeks</h2>
-          <div className="row">
+         {this.state.loading && <Lf/>}
+         {!this.state.loading && <div className="row">
             {this.state.article.map((ele) => {
               return (
                 <div className="col-md-4" key={ele.url}>
@@ -65,7 +77,7 @@ export default class News extends Component {
                 </div>
               );
             })}
-          </div>
+          </div>}
 
           <div className="container d-flex justify-content-evenly">
             <button

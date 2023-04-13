@@ -38,10 +38,9 @@ export default class Navbar extends Component {
             Country
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/in">in</a></li>
+            <li><a className="dropdown-item" href="/in">in</a ></li>
             <li><a className="dropdown-item" href="/us">us</a></li>
             <li><a className="dropdown-item" href="/sa">sa</a></li>
-            <li><hr className="dropdown-divider"/></li>
             <li><a className="dropdown-item" href="/ca">ca</a></li>
             <li><a className="dropdown-item" href="/nz">nz</a></li>
           </ul>
