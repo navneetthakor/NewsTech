@@ -28,23 +28,30 @@ export default class Navbar extends Component {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    Features
+                  <a className="nav-link" href="/in">
+                    India
                   </a>
                 </li>
-                
-          <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Country
-          </a>
-          <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/in">in</a ></li>
-            <li><a className="dropdown-item" href="/us">us</a></li>
-            <li><a className="dropdown-item" href="/sa">sa</a></li>
-            <li><a className="dropdown-item" href="/ca">ca</a></li>
-            <li><a className="dropdown-item" href="/nz">nz</a></li>
-          </ul>
-        </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/us">
+                    USA
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/sa">
+                    South Africa
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/ca">
+                    Canada
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/nz">
+                    Newzelend
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
