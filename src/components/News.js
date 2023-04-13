@@ -57,19 +57,6 @@ export default class News extends Component {
     },
     {
     "source": {
-    "id": null,
-    "name": "YouTube"
-    },
-    "author": null,
-    "title": "DeMar DeRozan & Zach LaVine react to play-in tournament win over Toronto | NBA on ESPN - ESPN",
-    "description": null,
-    "url": "https://www.youtube.com/watch?v=_7plJYYNe4k",
-    "urlToImage": null,
-    "publishedAt": "2023-04-13T02:36:11Z",
-    "content": "Your browser isnt supported anymore. Update it to get the best YouTube experience and our latest features. Learn more\r\nRemind me later"
-    },
-    {
-    "source": {
     "id": "fox-news",
     "name": "Fox News"
     },
@@ -188,19 +175,6 @@ export default class News extends Component {
     {
     "source": {
     "id": null,
-    "name": "Investor's Business Daily"
-    },
-    "author": "Investor's Business Daily",
-    "title": "Recession Fears Hit Market; Buffett's Concerns Slam These Stocks - Investor's Business Daily",
-    "description": null,
-    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp-500-slips-fed-sees-recession-warren-buffett-concerns-hit-these-stocks/",
-    "urlToImage": null,
-    "publishedAt": "2023-04-12T22:01:00Z",
-    "content": null
-    },
-    {
-    "source": {
-    "id": null,
     "name": "YouTube"
     },
     "author": null,
@@ -226,7 +200,7 @@ export default class News extends Component {
           <div className="row">
           {this.state.article.map((ele)=>{
            return <div className="col-md-4" key={ele.url}>
-              <NewsIteam title={ele.title} disc ={ele.description} imgurl = {ele.urlToImage} />
+              <NewsIteam title={ele.title.slice(0,20)} disc ={ele.description.slice(0,80)} imgurl = {ele.urlToImage} />
             </div>
           })
             }
