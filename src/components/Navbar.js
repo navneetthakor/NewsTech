@@ -24,12 +24,12 @@ export default class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to={"/in"}>
+                  <Link className="nav-link" to="/in">
                     India
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to={"/us"}>
+                  <Link className="nav-link" to="/us">
                     USA
                   </Link>
                 </li>
