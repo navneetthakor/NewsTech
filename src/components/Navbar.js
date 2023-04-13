@@ -49,7 +49,7 @@ export default class Navbar extends Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/nz">
-                    Newzelend
+                    New zelend
                   </a>
                 </li>
               </ul>
