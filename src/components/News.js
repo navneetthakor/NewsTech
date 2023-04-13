@@ -214,12 +214,8 @@ export default class News extends Component {
     ]
   
 
-    Constructor(){
-      console.log('c done');
-      this.setState = {
-        articles : this.articles
-      }
-    }
+    state = { article:this.articles};
+    
  
   render() {
 
@@ -227,30 +223,15 @@ export default class News extends Component {
       <>
         <div className="container my-3 text-center">
           <h2 >KalTak news station</h2>
-
           <div className="row">
-            <div className="col-md-4">
-              <NewsIteam title="first" disc ="this is description for it." imgurl = "https://photos5.appleinsider.com/gallery/53945-108525-Cupertino-xl.jpg" />
+          {this.state.article.map((ele)=>{
+           return <div className="col-md-4" key={ele.url}>
+              <NewsIteam title={ele.title} disc ={ele.description} imgurl = {ele.urlToImage} />
             </div>
-            <div className="col-md-4">
-              <NewsIteam />
-            </div>
-            <div className="col-md-4">
-              <NewsIteam />
-            </div>
+          })
+            }
           </div>
 
-          <div className="row">
-            <div className="col-md-4">
-              <NewsIteam />
-            </div>
-            <div className="col-md-4">
-              <NewsIteam />
-            </div>
-            <div className="col-md-4">
-              <NewsIteam />
-            </div>
-          </div>
         </div>
       </>
     );
