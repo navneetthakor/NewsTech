@@ -4,7 +4,7 @@ import React, { Component } from "react";
 export default class NewsIteam extends Component {
   
   render() {
-    let {title,disc,imgurl} = this.props;
+    let {title,disc,imgurl,url} = this.props;
     return (
       <>
         <div className="card my-2 " style={{width: "18rem"}}>
@@ -14,8 +14,8 @@ export default class NewsIteam extends Component {
             <p className="card-text">
               {disc}
             </p>
-            <a href="/" className="btn btn-primary">
-              Go somewhere
+            <a href={url} className="btn btn-primary" target="_blank" rel="noreferrer">
+              read more
             </a>
           </div>
         </div>

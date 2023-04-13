@@ -57,19 +57,6 @@ export default class News extends Component {
     },
     {
     "source": {
-    "id": "fox-news",
-    "name": "Fox News"
-    },
-    "author": "Bradford Betz",
-    "title": "Florida walloped by heavy rain, flooding as Fort Lauderdale cancels flights: ‘Life threatening situation’ - Fox News",
-    "description": "A torrential downpour is walloping South Florida this week, flooding streets for countless drivers and causing the Fort Lauderdale-Hollywood International Airport to cancel flights.",
-    "url": "https://www.foxnews.com/us/florida-walloped-heavy-rain-flooding-fort-lauderdale-cancels-flights-life-threatening-situation",
-    "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2023/04/Flood.jpg",
-    "publishedAt": "2023-04-13T01:49:00Z",
-    "content": "Showers and thunderstorms brought a torrential downpour to Florida Wednesday, flooding streets and canceling some flights. \r\nThe National Weather Service said Wednesday evening that two to six inches… [+1126 chars]"
-    },
-    {
-    "source": {
     "id": null,
     "name": "YouTube"
     },
@@ -200,7 +187,7 @@ export default class News extends Component {
           <div className="row">
           {this.state.article.map((ele)=>{
            return <div className="col-md-4" key={ele.url}>
-              <NewsIteam title={ele.title.slice(0,20)} disc ={ele.description.slice(0,80)} imgurl = {ele.urlToImage} />
+              <NewsIteam title={ele.title.slice(0,20)} disc ={ele.description.slice(0,80)} imgurl = {ele.urlToImage} url={ele.url} />
             </div>
           })
             }
