@@ -7,7 +7,7 @@ import Lf from "./Lf";
 export default class News extends Component {
 static defaultProps = {
  country :'in',
- size : 6
+ size : "6"
 }
 
   state = {
