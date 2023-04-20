@@ -29,7 +29,7 @@ export default class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/us">
+                  <Link  to="/us" className="nav-link">
                     USA
                   </Link>
                 </li>

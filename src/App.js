@@ -8,12 +8,12 @@ function App() {
     <>
      <Navbar/>
     <Routes>   
-    <Route exact path='/' element={<News country="in" size="9"/>}/>
-    <Route exact path='/in' element={<News country="in" size="9"/>}/>
-    <Route exact path='/us' element={<News country="us" size="9"/>}/>
-    <Route exact path='/sa' element={<News country="sa" size="9"/>}/>
-    <Route exact path='/ca' element={<News country="ca" size="9"/>}/>
-    <Route exact path='/nz' element={<News country="nz" size="9"/>}/>
+    <Route exact path='/' element={<News key="hin" country="in" size="12"/>}/>
+    <Route exact path='/in' element={<News key="in" country="in" size="12"/>}/>
+    <Route exact path='/us' element={<News key="us" country="us" size="12"/>}/>
+    <Route exact path='/sa' element={<News key="sa" country="sa" size="12"/>}/>
+    <Route exact path='/ca' element={<News key="ca" country="ca" size="12"/>}/>
+    <Route exact path='/nz' element={<News key="nz" country="nz" size="12"/>}/>
     </Routes>
 
     </>
