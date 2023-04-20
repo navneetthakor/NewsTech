@@ -8,7 +8,7 @@ function App() {
     <>
      <Navbar/>
     <Routes>   
-    <Route exact path='/' element={<News key="hin" country="in" size="12"/>}/>
+    <Route exact path='/' element={<News key="home" country="in" size="12"/>}/>
     <Route exact path='/in' element={<News key="in" country="in" size="12"/>}/>
     <Route exact path='/us' element={<News key="us" country="us" size="12"/>}/>
     <Route exact path='/sa' element={<News key="sa" country="sa" size="12"/>}/>

@@ -71,7 +71,7 @@ export default class News extends Component {
     return (
       <>
         <div className="container my-3 text-center">
-          <h2>{this.props.country}</h2>
+          <h2>{this.props.country} - Top Headlines</h2>
           {this.state.loading && <Lf />}
           {!this.state.loading && (
             <div className="row">
